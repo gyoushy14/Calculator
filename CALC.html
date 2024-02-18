@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calc {
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .calc form input {
+            border: 0;
+            outline: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            box-shadow: -8px -8px 15px rgb(255, 255, 255, 0.1), 5px 5px 15px rgb(0, 0, 0, 0.1);
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div class="container">
+        <div class="calc bg-dark gap-2">
+            <form action="">
+                <div class="result">
+                    <input type="text" name="result" id="result" style="width: 280px;">
+                </div>
+                <div class="row">
+                    <input class="col-3" type="button" value="AC"onclick="result.value = '' ">
+                    <input class="col-3" type="button" value="DE" onclick="result.value=result.value.toString().slice(0,-1)">
+                    <input class="col-3" type="button" value="." onclick="result.value +='.'">
+                    <input class="col-3" type="button" value="/" onclick="result.value +='/'">
+                </div>
+                <div class="row">
+                    <input class="col-3" type="button" value="7" onclick="result.value +='7'">
+                    <input class="col-3" type="button" value="8" onclick="result.value +='8'">
+                    <input class="col-3" type="button" value="9" onclick="result.value +='9'">
+                    <input class="col-3" type="button" value="*" onclick="result.value +='*'">
+                </div>
+                <div class="row">
+                    <input type="button" class="col-3" value="4" onclick="result.value +='4'">
+                    <input type="button" class="col-3" value="5" onclick="result.value +='5'">
+                    <input type="button" class="col-3" value="6" onclick="result.value +='6'">
+                    <input type="button" class="col-3" value="-" onclick="result.value +='-'">
+                </div>
+                <div class="row">
+                    <input type="button" class="col-3" value="1" onclick="result.value +='1'">
+                    <input type="button" class="col-3" value="2" onclick="result.value +='2'">
+                    <input type="button" class="col-3" value="3" onclick="result.value +='3'">
+                    <input type="button" class="col-3" value="+" onclick="result.value +='+'">
+                </div>
+                <div class="row">
+                    <input type="button" class="col-4" value="00" onclick="result.value +='00'">
+                    <input type="button" class="col-4" value="0"  onclick="result.value +='0'" >
+                    <input type="button" class="col-4" value="="  onclick="result.value= eval(result.value)" style="width: 140px;">
+                    <!-- <input type="button" value=""> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
